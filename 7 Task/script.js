@@ -59,6 +59,7 @@ function init() {
  	} else {
  		return 0;
  	}
+ init();
 }
 
 //Ask user does he want play again IF HE WON MONEY ALREADY
