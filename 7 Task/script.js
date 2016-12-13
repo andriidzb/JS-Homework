@@ -23,14 +23,14 @@ function init() {
  while (resultOfCompare == 0 && i < 2) {
   i++;
   alert("Try again!");
- 	userNumber = getUserNumber(0, 5);
+  userNumber = getUserNumber(0, 5);
   resultOfCompare = compareNumbers(pcNumber, userNumber, i, winForGame);
-
  }
 
  if (resultOfCompare == 0) {
- 	console.log("Your win 0$");
- 	init();
+  alert("Your win 0$")
+  console.log("Your win 0$");
+  init();
  } 
  
  var sumOfWin = +resultOfCompare;
@@ -38,34 +38,33 @@ function init() {
  if (sumOfWin > 0) {
   var startNewGame = playAgain(); 
  } else {
- 	return 0;
+    return 0;
  }
 
  while (startNewGame && newSumOfWin != 0) {
-	winForGame = winForGame * 3;
-	maxNumber = maxNumber * 2;
-	newSumOfWin = newGameFunc(maxNumber, sumOfWin, winForGame);
-	sumOfWin = newSumOfWin + sumOfWin;
-	if (newSumOfWin == 0) {
-		break;
+  winForGame = winForGame * 3;
+  maxNumber = maxNumber * 2;
+  newSumOfWin = newGameFunc(maxNumber, sumOfWin, winForGame);
+  sumOfWin = newSumOfWin + sumOfWin;
+
+ if (newSumOfWin == 0) {
+  break;
  }
-
-	startNewGame = playAgain();
-
+  startNewGame = playAgain();
  }
-
- 	if (sumOfWin > 0) {
- 	 console.log("Thanks for the game! Your win " + sumOfWin + "$");
- 	} else {
- 		return 0;
+ if (sumOfWin > 0) {
+  alert("Thanks for the game! Your win " + sumOfWin + "$");
+  console.log("Thanks for the game! Your win " + sumOfWin + "$");
+  } else {
+ 	 return 0;
  	}
  init();
 }
 
 //Ask user does he want play again IF HE WON MONEY ALREADY
 function playAgain() {
-	var newGame = confirm("Do you want to play again?");
-	return newGame;
+ var newGame = confirm("Do you want to play again?");
+ return newGame;
 }
 
 //Ask user does he want to play the game first time (without any win)
@@ -74,6 +73,7 @@ function willPlay() {
  if (userPlay) {
   return 1;
  } else {
+  alert("Today you will not win the jackpot, but you could");
   console.log("Today you will not win the jackpot, but you could");
   return 0;
  }
@@ -90,7 +90,7 @@ function generateNumber(range) {
 function getUserNumber(min, max) {
  var userNumb = -1;
  while (userNumb < 0 || userNumb > max) {
-	 userNumb = prompt("You have 3 attemps to guess the number. Enter number from " + min + " to " + max + ":");
+  userNumb = prompt("You have 3 attemps to guess the number. Enter number from " + min + " to " + max + ":");
  }; 
  return userNumb;
 }
@@ -111,7 +111,7 @@ function compareNumbers(generateNumb, userNumb, i, winForGame) {
   result = winForGame/5;
   return result;
  } else {
- 	return result;
+    return result;
  }
 }
 
@@ -125,15 +125,15 @@ function newGameFunc(maxNumber, sumOfWin, winForGame) {
 
  newCompare = compareNumbers(newPcNumber, userNumber, i, winForGame);
  
-  while (newCompare == 0 && i < 2) {
- 	i++;
- 	alert("Try again!");
- 	userNumber = getUserNumber(0, maxNumber);
+ while (newCompare == 0 && i < 2) {
+  i++;
+  alert("Try again!");
+  userNumber = getUserNumber(0, maxNumber);
   newCompare = compareNumbers(newPcNumber, userNumber, i, winForGame);
  }
 
  if (newCompare == 0) {
- 	return 0;
+  return 0;
  }
 
  sumOfWin = sumOfWin + newCompare;
