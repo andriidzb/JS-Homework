@@ -1,47 +1,82 @@
-init();
-
-function init() {
-	var a = k({a:1, b:2, c:3});
-	//var a = d(2);
-	console.log(a);
-}
-
 function a() {
-	return 5;
+ return 5;
 }
 
 function b(num1, num2) {
-	return num1 + num2;
+ return num1 + num2;
 }
 
 function c(num1, num2) {
-	var result;
-	result = Math.pow(num1, num2);
-	return result;
+ var result;
+ result = Math.pow(num1, num2);
+ return result;
 }
 
 function d(num) {
-	return {a:num};
+ object = {
+  a: num
+ }
+ return object;
 }
 
 function e(num) {
-	return num;
+ return function () {
+ 	return num;
+ }
 }
 
 function f(num1, num2) {
-	var array = [];
-	var i;
-	for ( i = 0; i < num2; i++ ) {
-		array[i] = num1;
+ var array = [];
+ var i;
+ for ( i = 0; i < num2; i++ ) {
+  array[i] = num1;
+ }
+ return array;
+}
+
+function g(num) {
+ if(!num) {
+ 	return 99;
+ } else {
+ 	return num;
+ }
+}
+
+function h(num) {
+	return num();
+}
+
+function j(arr) {
+ var sum = 0;
+ var i;
+ for (i = 0; i < arr.length; i++) {
+ 	sum = sum + arr[i];
+ }
+ return sum;
+}
+
+function k(object) {
+ var sum = 0;
+ var i;
+ for ( i in object) {
+ 	sum = sum + object[i];
+ } 
+ return sum;
+}
+
+function m(arr1, arr2) {
+ var arr3 = [];
+ var i;
+ for ( i = 0; i < arr1.length; i++) {
+  arr3 = arr1[i] + arr2[i];
+ }
+ return arr3;
+}
+
+function n(num1) {
+ return function (num2) {
+  return function (num3) {
+	 return num1 + num2 + num3;
 	}
-	return array;
+ }
 }
-
-function j([num1, num2, num3]) {
-	return num1 + num2 + num3;
-}
-
-function k({obj1:number1, obj2:number2, obj3:number3}) {
-	return {obj1:number1} + {obj2:number2} + {obj3:number3};
-}
-
