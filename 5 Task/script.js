@@ -68,7 +68,7 @@ function m(arr1, arr2) {
  var arr3 = [];
  var i;
  for ( i = 0; i < arr1.length; i++) {
-  arr3 = arr1[i] + arr2[i];
+  arr3[i] = arr1[i] + arr2[i];
  }
  return arr3;
 }
